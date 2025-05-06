@@ -1,0 +1,11 @@
+{:vars
+ {name {:arg name :env NAME :type :str :default "World"
+        :doc "The name of the person to greet"}
+  jdbc-url {:default "jdbc:sqlite:rss.db"}}
+ :system
+ {:duct.module/logging {}
+  :duct.module/web {}
+  :duct.module/sql {}
+  :bluesky-rss.print/hello {:logger #ig/ref :duct/logger
+                            :name #ig/var name
+                            :level #ig/profile {:main :info :repl :report}}}}

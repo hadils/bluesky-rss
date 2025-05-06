@@ -1,0 +1,4 @@
+[[:create-table rss
+  [id "INTEGER PRIMARY KEY"]
+  [url "TEXT"]
+  [check_next "INTEGER"]]]
