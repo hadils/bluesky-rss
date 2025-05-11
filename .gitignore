@@ -1,5 +1,5 @@
 /.cpcache/
 /target/
 *.db
-/.rebel_readline_history
 /logs/
+.rebel_readline_history

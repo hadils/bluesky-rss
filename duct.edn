@@ -1,11 +1,20 @@
 {:vars
  {name {:arg name :env NAME :type :str :default "World"
         :doc "The name of the person to greet"}
-  jdbc-url {:default "jdbc:sqlite:rss.db"}}
+  jdbc-url {:default "jdbc:sqlite:rss.db"}
+  bluesky-url {:arg url :env BLUESKY_URL :type :str :default "https://bsky.social"}
+  bluesky-handle {:arg handle :env BLUESKY_HANDLE :type :str :default "hadils.bsky.social"}
+  bluesky-password {:arg password :env BLUESKY_PASSWORD :type :str}}
  :system
  {:duct.module/logging {}
   :duct.module/web {}
   :duct.module/sql {}
   :bluesky-rss.print/hello {:logger #ig/ref :duct/logger
                             :name #ig/var name
-                            :level #ig/profile {:main :info :repl :report}}}}
+                            :level #ig/profile {:main :info :repl :report}}
+  :bluesky-rss.core/feed {:logger #ig/ref :duct/logger
+                          :urls ["https://www.govinfo.gov/rss/bills.xml"]}
+  :bluesky-rss.core/user {:logger #ig/ref :duct/logger
+                          :url #ig/var bluesky-url
+                          :handle #ig/var bluesky-handle
+                          :password #ig/var bluesky-password}}}

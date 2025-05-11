@@ -14,6 +14,9 @@
   http-kit/http-kit {:mvn/version "2.9.0-beta1"}
   com.github.oliyh/martian {:mvn/version "0.1.30"}
   com.github.oliyh/martian-httpkit {:mvn/version "0.1.30"}
+  metosin/muuntaja {:mvn/version "0.6.11"}
+  tick/tick {:mvn/version "1.0"}
+  org.jsoup/jsoup {:mvn/version "1.17.2"}
   djblue/portal {:mvn/version "0.59.0"}}
 
  :aliases
